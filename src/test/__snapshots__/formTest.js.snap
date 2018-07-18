@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Component renders correctly 1`] = `
+<form
+  className="listing"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor="title"
+    >
+      Title
+    </label>
+    <input
+      className="form-control form-control"
+      id="textInput"
+      onChange={[Function]}
+      placeholder="Enter any string"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    className="btn btn-success btn-lg btn btn-info"
+    id="savedBtn"
+    onClick={[Function]}
+    type="submit"
+  >
+    SAVE
+  </button>
+</form>
+`;
