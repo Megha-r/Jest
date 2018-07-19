@@ -5,7 +5,7 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupTestFrameworkScriptFile": "/home/megha/Desktop/React-JestUpdated/src/setupTest.js",
+    "setupTestFrameworkScriptFile": "./src/setupTest.js",
     "testRegex": "./test/.*.(js|jsx)$",
     "testPathIgnorePatterns": [
       "/node_modules/",
