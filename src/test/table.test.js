@@ -3,14 +3,15 @@ import Mytable from '../components/MyTable';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
-import { Button } from '../components/StyleComponent/Button';
 
-
+const mockProps = {
+  handleBtnClickID: jest.fn()
+}
 
 
 configure({ adapter: new Adapter() });
 let wrapper;
-describe('Table Component', () => {
+describe('***--- Table Component --- ***', () => {
 
   beforeEach(() => {
     wrapper = shallow(<Mytable />);
@@ -38,38 +39,35 @@ describe('Table Component', () => {
   })
 
   it('renders a coulmns of Table Component', () => {
+    
     expect(wrapper.find('#btnName').length).toEqual(1)
   })
 
 })
 
-let buttonWrapper;
 
 
-describe('*** Button ***', () => {
-  //     //  function handleBtnClickID() {
-  // //         console.log("Button sorting id tapped ********");
+describe('*** Sort by ID Button ***', () => {
+  
+  it('should call handleBtnClickID() when clicked', () => {
+    const spy = sinon.spy(Mytable.prototype, 'handleBtnClickID')
+    const wrapper = mount(<Mytable />)
+    wrapper.find("#btnID").at(1).simulate('click')
+    expect(spy.calledOnce).toEqual(true)
+    });
 
-  // //       }
-  // // var spy = sinon.spy(handleBtnClickID);
-  // // handleBtnClickID();
-  // // expect(spy.called).toEqual(false); 
+  })
 
-  it('should invoke handleClickID callback when click to "Button"', () => {
-    // wrapper = shallow(<Mytable />);
-    const buttonWrapper = mount(<Mytable />);
+  describe('*** Sort by Name Button ***', () => {
+  
+    it('should call handleBtnClickName() when clicked', () => {
+      const spy = sinon.spy(Mytable.prototype, 'handleBtnClickName')
+      const wrapper = mount(<Mytable />)
+      wrapper.find("#btnName").at(1).simulate('click')
+      expect(spy.calledOnce).toEqual(true)
+      });
+  
+    })
 
-    const onButtonClickID = sinon.spy(buttonWrapper.instance(), 'handleBtnClickID');
-    buttonWrapper.find(Button).at(0).simulate('click');
-    console.log('should invoke handleClickID callback',onButtonClickID.called);
-
-    expect(onButtonClickID.called).toEqual(true)
-
-    // wrapper.find('#btnID').simulate('click')
-
-    // expect(onButtonClickID.called).toBe(true); //false
-  });
-});
-
-
+    
 
