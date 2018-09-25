@@ -1,34 +1,35 @@
 
 import React from 'react';
-import { shallow, mount, configure } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ConnectedForm from '../components/Form';
 import configureStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
-import sinon from 'sinon';
+// import sinon from 'sinon';
 
 configure({ adapter: new Adapter() });
 let wrapper;
-let wrapperS;
-const initialState = {}; 
-const mockStore = configureStore();
-let store;
+// let wrapperS;
+// const initialState = {}; 
+// const mockStore = configureStore();
+// let store;
 describe('Form Component', () => {
  
   beforeEach(()=>{
     wrapper = shallow(<ConnectedForm />);
   })
   
-  // it('renders correctly', () => {
-  //   const tree = renderer.create(
-  //     <ConnectedForm />
-  //   ).toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  it('renders correctly', () => {
+    console.log('**********', wrapper.instance());
+    const tree = renderer.create(
+      <ConnectedForm />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
 
   it('should render without throwing an error', () => {
-      expect(wrapper.find('form.listing').exists()).toBe(true)
+      expect(wrapper.find('#form').exists()).toBe(true)
     })
   
 

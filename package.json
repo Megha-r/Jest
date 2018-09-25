@@ -5,14 +5,13 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "setupTestFrameworkScriptFile": "/home/megha/Desktop/React-JestUpdated/src/setupTest.js",
+    "setupTestFrameworkScriptFile": "/home/megha/Megha/PracticeApp/src/setupTest.js",
     "testRegex": "./test/.*.(js|jsx)$",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/",
       "/.babelrc"
     ],
-    "collectCoverage": true,
     "moduleNameMapper": {
       "^Components(.*)$": "<rootDir>/src/components$1"
     }
@@ -51,6 +50,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
     "jest-enzyme": "^6.0.2",
+    "react-localize-redux": "^3.3.0",
     "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0",
     "redux-mock-store": "^1.5.3",

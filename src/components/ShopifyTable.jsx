@@ -1,6 +1,9 @@
+
+
 import React, { Component } from 'react';
 
 import { DataTable, Card, Page } from '@shopify/polaris';
+import { RFC_2822 } from 'moment';
 // export default class ShopifyTable extends Component{
 //     // constructor(props){
 //     //     super(props);

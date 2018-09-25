@@ -43,17 +43,18 @@ defineRef(table) {
       <Background style={{ marginTop: "10px"}}  id='background'>
       <Wrapper id='heading'> Employee Data Table</Wrapper>
      <div style={{ marginTop: "10px", marginLeft:"10px"}}>    
-     <Button onClick={ this.handleBtnClickID } id="btnID">Sort By ID</Button>
-      <Button onClick={ this.handleBtnClickName } id="btnName" >Sort By Name</Button>     </div>
+      <Button onClick={ this.handleBtnClickID } id="btnID">Sort By ID</Button>
+      <Button onClick={ this.handleBtnClickName } id="btnName" >Sort By Name</Button>  
+     </div>
      <div style={{ width:"95%", marginLeft:"30px", textAlign:"center"}}>
-     <BootstrapTable ref={this.defineRef} data={ Employee }  pagination id="table">
+      <BootstrapTable ref={this.defineRef} data={ Employee }  pagination id="table">
          <TableHeaderColumn dataField='id'isKey={ true } dataSort={ true } id="column">ID</TableHeaderColumn>
          <TableHeaderColumn dataField='first_name' id="column" filter={ { type: 'TextFilter', delay: 1000 } } dataSort={ true } >Name</TableHeaderColumn>
          <TableHeaderColumn dataField='email' id="column">Email</TableHeaderColumn>
          <TableHeaderColumn dataField='country' id="column">Country</TableHeaderColumn>
          <TableHeaderColumn dataField='ip_address' id="column">IP Address</TableHeaderColumn>
        </BootstrapTable>
-       </div>
+    </div>
     
        </Background>
      );

@@ -3,6 +3,7 @@ import Mytable from '../components/MyTable';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
+import { Button } from '../components/StyleComponent/Button';
 
 const mockProps = {
   handleBtnClickID: jest.fn()
@@ -23,25 +24,25 @@ describe('***--- Table Component --- ***', () => {
   });
 
   it('renders a wrapper Component', () => {
-    expect(wrapper.find('#heading').length).toEqual(1)
+    expect(wrapper.find('#heading').length).toEqual(1)/*  */
   })
 
   it('renders a Bootstrap Table Component', () => {
     expect(wrapper.find('#table').length).toEqual(1)
   })
 
-  it('renders a coulmns of Table Component', () => {
-    expect(wrapper.find('#column').length).toEqual(5)
+  it('renders a columns of Table Component', () => {
+    expect(wrapper.find(TableHeaderColumn).length).toEqual(5)
   })
 
-  it('renders a coulmns of Table Component', () => {
-    expect(wrapper.find('#btnID').length).toEqual(1)
+  it('renders a columns of Table Component', () => {
+    expect(wrapper.find(Button).length).toEqual(2)
   })
 
-  it('renders a coulmns of Table Component', () => {
+  // it('renders a coulmns of Table Component', () => {
     
-    expect(wrapper.find('#btnName').length).toEqual(1)
-  })
+  //   expect(wrapper.find('#btnName').length).toEqual(1)
+  // })
 
 })
 
@@ -52,11 +53,13 @@ describe('*** Sort by ID Button ***', () => {
   it('should call handleBtnClickID() when clicked', () => {
     const spy = sinon.spy(Mytable.prototype, 'handleBtnClickID')
     const wrapper = mount(<Mytable />)
+    // console.log('************', wrapper.instance());
     wrapper.find("#btnID").at(1).simulate('click')
     expect(spy.calledOnce).toEqual(true)
     });
 
   })
+  
 
   describe('*** Sort by Name Button ***', () => {
   
@@ -64,7 +67,7 @@ describe('*** Sort by ID Button ***', () => {
       const spy = sinon.spy(Mytable.prototype, 'handleBtnClickName')
       const wrapper = mount(<Mytable />)
       wrapper.find("#btnName").at(1).simulate('click')
-      expect(spy.calledOnce).toEqual(true)
+      expect(spy.calledOnce).toBe(true)
       });
   
     })
